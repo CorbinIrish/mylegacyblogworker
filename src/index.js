@@ -13,7 +13,7 @@ export default {
                     'Content-Type': 'text/html',
                     'Access-Control-Allow-Origin': allowedOrigin,
                     'Access-Control-Allow-Methods': 'GET, OPTIONS',
-                    'Access-Control-Allow-Headers': 'Content-Type, HX-Request, HX-Target',
+                    'Access-Control-Allow-Headers': getAllowedHeaders(),
                 },
             });
         }
@@ -58,7 +58,19 @@ function handleOptions(allowedOrigin) {
     const headers = {
         'Access-Control-Allow-Origin': allowedOrigin,
         'Access-Control-Allow-Methods': 'GET, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, HX-Request, HX-Target',
+        'Access-Control-Allow-Headers': getAllowedHeaders(),
     };
     return new Response(null, { headers });
+}
+
+function getAllowedHeaders() {
+    return [
+        'Content-Type',
+        'HX-Request',
+        'HX-Trigger',
+        'HX-Target',
+        'HX-Current-URL',
+        'HX-Prompt',
+        'HX-Trigger-Name',
+    ].join(', ');
 }
