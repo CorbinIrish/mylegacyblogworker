@@ -32,7 +32,7 @@ function getNavbarHTML() {
         { title: "Protecting Your Family", link: "https://mylegacyblog.com/protecting-family" },
     ];
 
-    const dropdownContent = articles
+    const articlesHTML = articles
         .map(article => `<a href="${article.link}" style="display: block; padding: 5px 0; color: white;">${article.title}</a>`)
         .join('');
 
@@ -43,7 +43,9 @@ function getNavbarHTML() {
                     <li><a href="/">Home</a></li>
                     <li class="dropdown">
                         <a href="#">Articles</a>
-                        <div class="dropdown-content">${dropdownContent}</div>
+                        <div class="dropdown-content" style="display: none; position: absolute; background-color: #424242; padding: 10px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);">
+                            ${articlesHTML}
+                        </div>
                     </li>
                     <li><a href="tel:2393504100">239-350-4100</a></li>
                 </ul>
