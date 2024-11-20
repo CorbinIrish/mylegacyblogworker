@@ -3,17 +3,10 @@ export default {
         const { pathname } = new URL(request.url);
         const allowedOrigin = 'https://mylegacyblog.com';
 
-        // Handle CORS pre-flight
         if (request.method === 'OPTIONS') {
             return handleOptions(allowedOrigin);
         }
 
-        // Enforce allowed origin
-        if (request.headers.get('Origin') !== allowedOrigin) {
-            return new Response('Forbidden', { status: 403 });
-        }
-
-        // Serve navbar on /load-navbar
         if (pathname === '/load-navbar' && request.method === 'GET') {
             return new Response(getNavbarHTML(), {
                 headers: {
