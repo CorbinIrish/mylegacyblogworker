@@ -13,7 +13,7 @@ export default {
                     'Content-Type': 'text/html',
                     'Access-Control-Allow-Origin': allowedOrigin,
                     'Access-Control-Allow-Methods': 'GET, OPTIONS',
-                    'Access-Control-Allow-Headers': 'Content-Type, HX-Request',
+                    'Access-Control-Allow-Headers': 'Content-Type, HX-Request, HX-Target',
                 },
             });
         }
@@ -58,7 +58,7 @@ function handleOptions(allowedOrigin) {
     const headers = {
         'Access-Control-Allow-Origin': allowedOrigin,
         'Access-Control-Allow-Methods': 'GET, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, HX-Request',
+        'Access-Control-Allow-Headers': 'Content-Type, HX-Request, HX-Target',
     };
     return new Response(null, { headers });
 }
