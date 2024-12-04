@@ -44,7 +44,7 @@ function getNavbarHTML() {
                     <li class="dropdown">
                         <a href="#">Articles</a>
                         <div class="dropdown-content">
-                            <!-- Article links dynamically generated -->
+                            <!-- Dynamically generated article links -->
                         </div>
                     </li>
                     <li><a href="tel:2393504100">239-350-4100</a></li>
@@ -52,7 +52,7 @@ function getNavbarHTML() {
                 </ul>
             </nav>
         </div>
-
+        
     `;
 }
 
