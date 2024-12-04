@@ -38,19 +38,21 @@ function getNavbarHTML() {
 
     return `
         <div id="navbar-container">
-            <nav style="background-color: #333; color: white; padding: 10px;">
+            <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li class="dropdown">
                         <a href="#">Articles</a>
-                        <div class="dropdown-content" style="display: none; position: absolute; background-color: #424242; padding: 10px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);">
-                            ${articlesHTML}
+                        <div class="dropdown-content">
+                            <!-- Article links dynamically generated -->
                         </div>
                     </li>
                     <li><a href="tel:2393504100">239-350-4100</a></li>
+                    <li><a class="book-call" href="tel:2393504100">Book a Call</a></li>
                 </ul>
             </nav>
         </div>
+
     `;
 }
 
